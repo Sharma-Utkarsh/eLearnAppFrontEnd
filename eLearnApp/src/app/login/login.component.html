@@ -8,11 +8,11 @@
         <div class = "card-body">
           <form  name="form"  novalidate>
             <div class="form-group">
-                <label for="username">Email</label> <input type="text" class="form-control" name="username" required  />
-            
+                <input type="text" class="form-control" placeholder ="email"name="username" required >   
             </div>
+            <br>
             <div class="form-group">
-            <label for="password">Password</label> <input type="password" class="form-control" name="password"  required minlength="6">
+             <input type="password" class="form-control" name="password" placeholder="password" required minlength="6">
                 <!--<div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
                     <div *ngIf="password.errors.required">Password is required</div>
                     <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
