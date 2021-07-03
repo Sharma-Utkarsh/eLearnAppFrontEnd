@@ -10,6 +10,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MentorsComponent } from './mentors/mentors.component';
 import { HomeComponent } from './home/home.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
+import { DashboardModeratorComponent } from './dashboard-moderator/dashboard-moderator.component';
+import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,17 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     LoginComponent,
     MentorsComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardUserComponent,
+    DashboardModeratorComponent,
+    DashboardAdminComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
