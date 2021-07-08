@@ -31,4 +31,7 @@ export class AuthService {
       socialProvider: 'LOCAL'
     }, httpOptions);
   }
+   loggedin(){
+     return !!window.sessionStorage.getItem('token')
+   }
 }

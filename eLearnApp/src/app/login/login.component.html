@@ -8,12 +8,12 @@
         <div class = "card-body">
           <form *ngIf="!isLoggedIn" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" name="form"  novalidate>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder ="email" name="username"  [(ngModel)]="form.username" required #username="ngModel" > 
+                <input type="text" class="form-control" placeholder ="email" name="username" placeholder="userName" [(ngModel)]="form.username" required #username="ngModel" > 
                 <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">Username is required!</div>  
             </div>
             <br>
             <div class="form-group">
-              <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+              <input type="password" class="form-control" name="password" placeholder="password" [(ngModel)]="form.password" required minlength="6"
               #password="ngModel">
                 <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
                     <div *ngIf="password.errors.required">Password is required</div>

@@ -24,7 +24,7 @@ export class UserService {
   }
  
   getModeratorBoard(): Observable<any> {
-    return this.http.get(AppConstants.API_URL + 'mod', { responseType: 'text' });
+    return this.http.get(AppConstants.API_URL + 'teacher', { responseType: 'text' });
   }
  
   getAdminBoard(): Observable<any> {

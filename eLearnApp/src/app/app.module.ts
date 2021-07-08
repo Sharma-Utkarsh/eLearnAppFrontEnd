@@ -11,10 +11,17 @@ import { LoginComponent } from './login/login.component';
 import { MentorsComponent } from './mentors/mentors.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
 import { DashboardModeratorComponent } from './dashboard-moderator/dashboard-moderator.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule} from '@angular/common/http';
+import { AuthService } from './_services/auth-service.service';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
+import { AuthGuard } from './auth.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -29,15 +36,18 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardUserComponent,
     DashboardModeratorComponent,
     DashboardAdminComponent,
-    ProfileComponent
+    ProfileComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+   
   ],
-  providers: [],
+  providers: [AuthService,AuthInterceptor,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

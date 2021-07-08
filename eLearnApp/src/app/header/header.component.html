@@ -14,13 +14,19 @@
         <li class="nav-item">
           <a class="nav-link" routerLink = "mentors">Mentors</a>
         </li>
+      </ul>
+      <ul class="navbar-nav" *ngIf="!isLoggedIn">  
         <li class="nav-item" id = "register">
           <a class="nav-link" routerLink = "register">Signup</a>
         </li>
         <li class="nav-item" id = "login">
             <a class="nav-link" routerLink = "login">Login</a>
-          </li>
+        </li>
       </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item"><a href="/profile" class="nav-link" routerLink="profile">profile</a></li>
+        <li class="nav-item"><a href class="nav-link" (click)="logout()">LogOut</a></li>
+    </ul>
     </div>
 </nav>
 <!--Alternate Header Code-->

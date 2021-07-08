@@ -5,11 +5,31 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MentorsComponent } from './mentors/mentors.component';
 import { HomeComponent } from './home/home.component';
+import { componentFactoryName } from '@angular/compiler';
+import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
+import { AuthGuard } from './auth.guard';
+import { DashboardModeratorComponent } from './dashboard-moderator/dashboard-moderator.component';
+import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   /*{
     path : "" , redirectTo : "home" , pathMatch : "full" 
   },*/
+  {
+    path : "dashboarduser",
+    component : DashboardUserComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path : "dashboardmoderator",
+    component : DashboardModeratorComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path : "dashboardadmin",
+    component : DashboardAdminComponent,
+    canActivate : [AuthGuard]
+  },
   {
     path : "home" , component : HomeComponent
   },

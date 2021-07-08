@@ -24,7 +24,7 @@
                         </div>
                            <br>
                         <div class="form-group">
-                          <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+                          <input type="email" class="form-control" name="email" placeholder="email" [(ngModel)]="form.email" required email #email="ngModel" />
                           <div class="alert-danger" *ngIf="f.submitted && email.invalid">
                               <div *ngIf="email.errors.required">Email is required</div>
                               <div *ngIf="email.errors.email">Email must be a valid email address</div>
@@ -32,7 +32,7 @@
                         </div>
                           <br>
                         <div class="form-group">                        
-                          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+                          <input type="password" class="form-control" name="password" placeholder="password" [(ngModel)]="form.password" required minlength="6"
                                   #password="ngModel" />
                             <div class="alert-danger" *ngIf="f.submitted && password.invalid">
                                 <div *ngIf="password.errors.required">Password is required</div>
@@ -41,7 +41,7 @@
                         </div>
                         <br>
                         <div class="form-group">                        
-                          <input type="password" class="form-control" name="matchingPassword" [(ngModel)]="form.matchingPassword"
+                          <input type="password" class="form-control" name="matchingPassword" placeholder="confirmPassword" [(ngModel)]="form.matchingPassword"
                           required minlength="6" #matchingPassword="ngModel" />
                             <div class="alert-danger" *ngIf="f.submitted && matchingPassword.invalid">
                               <div *ngIf="matchingPassword.errors.required">Confirm Password is required</div>
@@ -54,12 +54,12 @@
                         <div class="form-check-inline">
                             Choose a Role :
                             <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="role" [(ngModel)]="form.role" #role="ngModel"> Student
+                              <input type="radio" class="form-check-input" id="role" name="role" [(ngModel)]="form.role" #role="ngModel"> Student
                             </label>
                           </div>
                           <div class="form-check-inline">
                             <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="role" [(ngModel)]="form.role" #role="ngModel"> SME
+                              <input type="radio" class="form-check-input" id="role" name="role" [(ngModel)]="form.role" #role="ngModel"> SME
                             </label>
                           </div>
                         <br><br>
